@@ -9,16 +9,16 @@ extern "C"
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef struct CTPRGB16
+typedef struct CtpRGB16
 {
     uint16_t red;
     uint16_t green;
     uint16_t blue;
-} CTPRGB16;
+} CtpRGB16;
 
-inline CTPRGB16 *ctp_rgb_16_new(const uint16_t red, const uint16_t green, const uint16_t blue)
+inline CtpRGB16 *ctp_rgb_16_new(const uint16_t red, const uint16_t green, const uint16_t blue)
 {
-    CTPRGB16 *self = (CTPRGB16 *)malloc(sizeof(CTPRGB16));
+    CtpRGB16 *self = (CtpRGB16 *)malloc(sizeof(CtpRGB16));
     if (self == NULL)
     {
         return NULL;
@@ -31,12 +31,12 @@ inline CTPRGB16 *ctp_rgb_16_new(const uint16_t red, const uint16_t green, const 
     return self;
 }
 
-inline void ctp_rgb_16_delete(CTPRGB16 *self)
+inline void ctp_rgb_16_delete(CtpRGB16 *self)
 {
     free(self);
 }
 
-typedef struct CTPHSV16
+typedef struct CtpHSV16
 {
     /**
      * [0, 360) deg mapped to [0, UINT16_MAX].
@@ -51,11 +51,11 @@ typedef struct CTPHSV16
      * [0, 1] mapped to [0, UINT16_MAX].
      */
     uint16_t value;
-} CTPHSV16;
+} CtpHSV16;
 
-inline CTPHSV16 *ctp_hsv_16_new(const uint16_t hue, const uint16_t saturation, const uint16_t value)
+inline CtpHSV16 *ctp_hsv_16_new(const uint16_t hue, const uint16_t saturation, const uint16_t value)
 {
-    CTPHSV16 *self = (CTPHSV16 *)malloc(sizeof(CTPHSV16));
+    CtpHSV16 *self = (CtpHSV16 *)malloc(sizeof(CtpHSV16));
     if (self == NULL)
     {
         return NULL;
@@ -68,12 +68,12 @@ inline CTPHSV16 *ctp_hsv_16_new(const uint16_t hue, const uint16_t saturation, c
     return self;
 }
 
-inline void ctp_hsv_16_delete(CTPHSV16 *self)
+inline void ctp_hsv_16_delete(CtpHSV16 *self)
 {
     free(self);
 }
 
-CTPRGB16 *ctp_hsv_16_to_rgb_16(CTPHSV16 *self);
+CtpRGB16 *ctp_hsv_16_to_rgb_16(CtpHSV16 *self);
 
 #ifdef __cplusplus
 }

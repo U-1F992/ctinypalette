@@ -29,8 +29,8 @@ static int test_hsv_16_to_rgb_16(TestCase_HSV16ToRGB16 cases[], const size_t len
     for (size_t i = 0; i < length; i++)
     {
         TestCase_HSV16ToRGB16 test = cases[i];
-        CTPHSV16 *hsv = ctp_hsv_16_new(test.param_hue, test.param_saturation, test.param_value);
-        CTPRGB16 *rgb = ctp_hsv_16_to_rgb_16(hsv);
+        CtpHSV16 *hsv = ctp_hsv_16_new(test.param_hue, test.param_saturation, test.param_value);
+        CtpRGB16 *rgb = ctp_hsv_16_to_rgb_16(hsv);
         ctp_hsv_16_delete(hsv);
 
         assert(rgb != NULL);

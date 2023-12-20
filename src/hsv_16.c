@@ -1,9 +1,9 @@
 #include "ctinypalette.h"
 
-extern inline CTPHSV16 *ctp_hsv_16_new(const uint16_t hue, const uint16_t saturation, const uint16_t value);
-extern inline void ctp_hsv_16_delete(CTPHSV16 *self);
+extern inline CtpHSV16 *ctp_hsv_16_new(const uint16_t hue, const uint16_t saturation, const uint16_t value);
+extern inline void ctp_hsv_16_delete(CtpHSV16 *self);
 
-CTPRGB16 *ctp_hsv_16_to_rgb_16(CTPHSV16 *self)
+CtpRGB16 *ctp_hsv_16_to_rgb_16(CtpHSV16 *self)
 {
     if (self->saturation == 0)
     {
